@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Technical Documentation Page</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
+
+<article id="art">
+  <nav id="navbar">
+    <header>ReactJs Documentation</header>
+    <ul >
+      <a href="#Introduction" class="nav-link"><li>Introduction</li></a>
+      
+      <a href="#Documentation_Content" class="nav-link"><li>Documentation Content</li></a>
+      <a href="#Hello_World" class="nav-link"> <li>Hello World</li></a>
+     
+      <a href="#Introducing_JSX" class="nav-link"><li>Introducing JSX</li></a>
+      <a href="#Rendering_Elements" class="nav-link"><li>Rendering Elements</li></a>
+      <a href="#Components_and_Props" class="nav-link"><li>Components and Props</li></a>
+      <a href="#State_and_Lifecycle" class="nav-link"><li>State and Lifecycle</li></a>
+      <a href="#Handling_Events" class="nav-link"><li>Handling Events</li></a>
+      <a href="#Conditional_Rendering" class="nav-link"><li>Conditional Rendering</li></a>
+      <a href="#Lists" class="nav-link"><li>Lists</li></a>
+      <a href="#Forms" class="nav-link"><li>Forms</li></a>
+      <a href="#Lifting_State_Up" class="nav-link"><li>Lifting State Up</li></a>
+      <a href="#Composition_vs_Inheritance" class="nav-link"><li>Composition vs Inheritance</li></a>
+      <a href="#Thinking_In_React" class="nav-link"><li>Thinking In React</li></a>
+      <a href="#Reference" class="nav-link"><li>Reference</li></a>
+      
+    </ul>  
+    
+  </nav>   
+  
+  
+<main id="main-doc">
+<section  id="Introduction" class="main-section">
+  <header>Introduction</header>
+  <p>React is open source JavaScript library for building dynamic user interaces.This is actually "View" in the MVC(Model View Controller) model. Maintaied by Facebook, Instragram and the community of individuals developers.</p>
+  </section>  
+  
+  <section id="Documentation_Content" class="main-section">
+  <header>Documentation Content</header>
+    <p>
+      <ol>
+        <li>Hello World</li>
+        <li>Introducing JSX</li>
+        <li>Rendering Elements</li>
+        <li>Components and Props</li>
+        <li>State and Lifecycle</li>
+        <li>Handling Events</li>
+        <li>Conditional Rendering</li>
+        <li>Lists and Keys</li>
+        <li>Forms</li>
+        <li>Lifting State Up</li>
+        <li>Composition vs Inheritance</li>
+        <li>Thinking In React</li>
+       
+        
+    </ol>
+      
+    </p>
+  </section> 
+  <section id="Hello_World" class="main-section">
+  <header>Hello World</header>
+    <p>
+    <h4>The smallest React example looks like this:</h4>
+      <code> ReactDOM.render( <br>
+           < h1 > Hello,  world! < /h1 >,<br>
+           document.getElementById('root')
+<br>);</code>
+             <br><br><p>It displays a heading saying “Hello, world!” on the page.</p>
+    </p>
+  </section> 
+  <section id="Introducing_JSX" class="main-section">
+  <header>Introducing JSX</header>
+    <p><h4> Consider this variable declaration:</h4><br><br>
+      <code>const element = < h1 >Hello, world!< /h1 >;</code><br>
+        
+        <p> This funny tag syntax is neither a string nor HTML.</p><br>
+
+<p>It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.</p><br>
+
+<p>JSX produces React “elements”. We will explore rendering them to the DOM in the next section. </p>
+    </p>
+  </section> 
+  <section  id="Rendering_Elements" class="main-section">
+  <header>Rendering Elements</header>
+    <p><h4>Elements are the smallest building blocks of React apps.</h4>
+    
+    <p>An element describes what you want to see on the screen:</p><br>
+    <code>const element = < h1 >Hello, world< /h1 >;</code><br>
+      <p>Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.</p>
+    </p>
+  </section> 
+   <section  id="Components_and_Props" class="main-section">
+  <header>Components and Props</header>
+     <p> <h4>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a ,<strong>detailed component API reference here.</strong> </h4> <br>
+
+<p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.</p></p>
+     
+  </section>
+   <section  id="State_and_Lifecycle" class="main-section">
+  <header>State and Lifecycle</header>
+     <p><h4>This page introduces the concept of state and lifecycle in a React component. You can find a detailed component API reference here.</h4><br>
+   <p>  Consider the ticking clock example from one of the previous sections. In Rendering Elements, we have only learned one way to update the UI. We call ReactDOM.render() to change the rendered output:</p><br>
+     <code>function tick() {<br>
+  const element = (<br>
+    < div ><br>
+      < h1 >Hello, world!< /h1 ><br>
+      < h2 >It is {new Date().toLocaleTimeString()}.< /h2 ><br>
+    < /div ><br>
+  );<br>
+  ReactDOM.render(<br>
+    element,<br>
+    document.getElementById('root')<br>
+  );<br>
+},<br>
+
+       setInterval(tick, 1000);</code>
+     </p>
+  </section>
+   <section  id="Handling_Events" class="main-section">
+  <header>Handling Events</header>
+     <p><h4>Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:</h4>
+     <ul>
+       <li>React events are named using camelCase, rather than lowercase.</li>
+       <li>With JSX you pass a function as the event handler, rather than a string.</li>
+     </ul><br>
+    <p> For example, the HTML:</p><br>
+     <code>< button onclick="activateLasers()"><br>
+  Activate Lasers<br>
+< /button ></code><br><br>
+       <p> is slightly different in React:</p><br>
+
+        <code>< button onClick={activateLasers}><br>
+  Activate Lasers<br>
+          < /button ></code>
+     
+     </p>
+  </section>
+   <section  id="Conditional_Rendering" class="main-section">
+  <header>Conditional Rendering</header>
+     <p> <h4>In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.</h4><br><p>Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.</p><br>
+     <p>Consider these two components:</p><br>
+     <code>function UserGreeting(props) {<br>
+  return < h1 >Welcome back!< /h1 >;<br>
+}<br>
+<br>
+function GuestGreeting(props) {<br>
+  return < h1 >Please sign up.< /h1 >;<br>
+}</code><br>
+      <p> We’ll create a Greeting component that displays either of these components depending on whether a user is logged in:</p><br>
+       <code>
+         function Greeting(props) {<br>
+  const isLoggedIn = props.isLoggedIn;<br>
+  if (isLoggedIn) {<br>
+    return <UserGreeting />;<br>
+  }<br>
+  return <GuestGreeting />;<br>
+}<br><br>
+
+ReactDOM.render(<br>
+  // Try changing to isLoggedIn={true}:<br>
+  <Greeting isLoggedIn={false} />,<br>
+  document.getElementById('root')<br>
+);<br>
+       </code>
+     </p>
+  </section>
+   <section  id="Lists" class="main-section">
+  <header>Lists</header>
+     <p><h4>First, let’s review how you transform lists in JavaScript.</h4><br>
+    <p> Given the code below, we use the map() function to take an array of numbers and double their values. We assign the new array returned by map() to the variable doubled and log it:</p><br>
+     <code>
+       
+       const numbers = [1, 2, 3, 4, 5];<br>
+const doubled = numbers.map((number) => number * 2);<br>
+console.log(doubled);</code><br>
+     <p>This code logs [2, 4, 6, 8, 10] to the console.</p>
+     <p> In React, transforming arrays into lists of elements is nearly identical.</p>
+     
+     </p>
+  </section>
+   <section  id="Forms" class="main-section">
+  <header>Forms</header>
+     <p><h4>HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:</h4><br>
+     <code>< form ><br>
+  < label ><br>
+    Name:<br>
+    < input type="text" name="name" /><br>
+  < /label ><br>
+  < input type="submit" value="Submit" /><br>
+       < /form ></code><br>
+   <p> This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it’s convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called “controlled components”.</p>
+     <p>
+  </section>
+   <section  id="Lifting_State_Up" class="main-section">
+  <header>Lifting State Up</header>
+     <p><h4>Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.</h4>
+     
+    <p> In this section, we will create a temperature calculator that calculates whether the water would boil at a given temperature.</p>
+     <p>We will start with a component called BoilingVerdict. It accepts the celsius temperature as a prop, and prints whether it is enough to boil the water:</p>
+     <code>
+       function BoilingVerdict(props) {<br>
+  if (props.celsius >= 100) {<br>
+    return < p >The water would boil.< /p >;<br>
+  }<br>
+  return < p >The water would not boil.< /p >;<br>
+}
+     </code>
+     </p>
+  </section>
+   <section  id="Composition_vs_Inheritance" class="main-section">
+  <header>Composition vs Inheritance</header>
+     <p><h4>React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.</h4>
+     
+     <p>In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.</p>
+     <h5>Containment</h5>
+    <p> Some components don’t know their children ahead of time. This is especially common for components like Sidebar or Dialog that represent generic “boxes”.</p>
+    <p> We recommend that such components use the special children prop to pass children elements directly into their output:</p>
+     <code>
+       function FancyBorder(props) {<br>
+  return (<br>
+    < div className={'FancyBorder FancyBorder-' + props.color}><br>
+      {props.children}<br>
+    < /div ><br>
+  );<br>
+}<br>
+     </code><br>
+      
+      <p>This lets other components pass arbitrary children to them by nesting the JSX:</p>
+      <code>
+        function WelcomeDialog() {<br>
+  return (<br>
+    < FancyBorder color="blue" ><br>
+      < h1 className="Dialog-title" ><br>
+        Welcome<br>
+      < /h1 ><br>
+      < p className="Dialog-message" ><br>
+        Thank you for visiting our spacecraft!<br>
+      < /p ><br>
+    < /FancyBorder ><br>
+  );<br>
+}<br>
+      </code>
+     <p>
+  </section>
+   <section  id="Thinking_In_React" class="main-section">
+  <header>Thinking In React</header>
+     <p><h4>React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.</h4><br>
+      
+      <p>
+  </section>
+  
+    <section  id="Reference" class="main-section">
+  <header>Reference</header>
+      <p>
+       
+          All the documentation in this page is taken from <a href="https://reactjs.org/docs/" trget="_blank">reactjs.org</a>
+      
+      </p>
+      
+  </section>
+  
+  
+  
+
+
+</main>
+  
+  
+</article>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
